@@ -139,7 +139,7 @@ app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
 
-//when running with nodmon database connection closed message is inconsistent, works perfectly when ruinning with "node app.js"
+//when running with nodmon database connection closed message is inconsistent, works perfectly when running with "node app.js"
 process.on('SIGINT', async () => {
   console.log('SIGINT event triggered.');
   try {
