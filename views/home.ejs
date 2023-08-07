@@ -1,0 +1,28 @@
+<%- include('partials/header'); %>
+
+<h3 class="date" ><%= todaysDate %></h3>
+<h1>HOME <i class="fa-solid fa-blog"></i></h1>
+<p><%= startingContent %></p>
+<!-- <hr> -->
+<!-- <div class="postDiv"> -->
+    <% if (posts.length===0) { %>
+        <h3>no posts to show <i class="fa-solid fa-ghost"></i></h3>
+    <% } else { %>
+        <% for( let i = 0; i < posts.length; i++ ) { %>
+            <div class="postDiv">
+        <h3 class="postsTitle"><%= posts[i].title %></h3>
+        <p><%= posts[i].content.substring(0,200)+"..." %><a href="/posts/<%= i %>" class="readMore">Read more</a></p>
+    </div>
+        <% if (i < posts.length - 1) { %>
+            <hr class="dashedHr">
+        <% } %>
+
+    <% } }%>
+<!-- </div> -->
+<div class="btnDiv">
+<a class="btn btn-outline-primary buttonBlue buttonn" href="/compose"><i class="fa-regular fa-pen-to-square"></i> Compose</a>
+<a class="btn btn-outline-danger buttonRed buttonn" href="/deleteAll"><i class="fa-regular fa-trash-can"></i> Delete All</a>
+</div>
+<%- include('partials/footer'); %>
+
+<!-- typeof posts==="string" -->

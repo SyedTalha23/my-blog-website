@@ -1,0 +1,9 @@
+<%- include('partials/header'); %>
+
+<h1>Post Page</h1>
+<h2><%=postObj.title %></h2>
+<p><%= postObj.content %></p>
+<!-- <form action="/delete"><button type="submit">delete</button></form> -->
+<a class="btn btn-outline-primary buttonBlue buttonn" href="/"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+<a class="btn btn-outline-danger buttonRed buttonn" href="/delete/<%= postNumber %>"><i class="fa-regular fa-trash-can"></i> Delete Post</a>
+<%- include('partials/footer'); %>
